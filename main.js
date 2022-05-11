@@ -1,3 +1,5 @@
+
+
 const displayedImage = document.querySelector('.displayed-img');
 const thumbBar = document.querySelector('.thumb-bar');
 
@@ -19,6 +21,20 @@ images.forEach(elem => {
   thumbBar.appendChild(newImage);
 })
 
-
+thumbBar.addEventListener('click', (e) => {
+  console.log(e.target)
+  displayedImage.src = e.target.src
+})
 
 /* Wiring up the Darken/Lighten button */
+btn.addEventListener('click', () => {
+  if (btn.getAttribute('class') === 'dark') {
+    btn.setAttribute('class', 'light');
+    btn.textContent = 'Lighten';
+    overlay.style.backgroundColor = 'rgba(0,0,0,0.5)';
+  } else if (btn.getAttribute('class') === 'light') {
+    btn.setAttribute('class', 'dark');
+    btn.textContent = 'Darken';
+    overlay.style.backgroundColor = 'rgba(0,0,0,0)';
+  }
+})

@@ -13,9 +13,12 @@ const images = [
   'images/pic5.jpg'
 ]
 /* Looping through images */
+images.forEach(elem => {
+  const newImage = document.createElement('img');
+  newImage.setAttribute('src', elem);
+  thumbBar.appendChild(newImage);
+})
 
-const newImage = document.createElement('img');
-newImage.setAttribute('src', xxx);
-thumbBar.appendChild(newImage);
+
 
 /* Wiring up the Darken/Lighten button */

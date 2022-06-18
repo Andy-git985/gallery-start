@@ -1,5 +1,3 @@
-
-
 const displayedImage = document.querySelector('.displayed-img');
 const thumbBar = document.querySelector('.thumb-bar');
 
@@ -12,19 +10,19 @@ const images = [
   'images/pic2.jpg',
   'images/pic3.jpg',
   'images/pic4.jpg',
-  'images/pic5.jpg'
-]
+  'images/pic5.jpg',
+];
 /* Looping through images */
-images.forEach(elem => {
+images.forEach((elem) => {
   const newImage = document.createElement('img');
   newImage.setAttribute('src', elem);
   thumbBar.appendChild(newImage);
-})
+});
 
 thumbBar.addEventListener('click', (e) => {
-  console.log(e.target)
-  displayedImage.src = e.target.src
-})
+  console.log(e.target);
+  displayedImage.src = e.target.src;
+});
 
 /* Wiring up the Darken/Lighten button */
 btn.addEventListener('click', () => {
@@ -37,4 +35,4 @@ btn.addEventListener('click', () => {
     btn.textContent = 'Darken';
     overlay.style.backgroundColor = 'rgba(0,0,0,0)';
   }
-})
+});
